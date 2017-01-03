@@ -10,19 +10,22 @@ namespace NancyDemo.Form
     {
         public HomeModule()
         {
+            //旧方法：jQuery和PHP提交表单
             Get["/"] = x =>
             {
                 
                 return this.View["index-old"];
             };
 
+            //新方法：AngularJS和PHP提交表单
             Get["/new"] = x =>
             {
 
                 return this.View["index-new"];
             };
 
-            Post["/data"] = x =>
+            //统一后台处理
+            Post["/submit"] = x =>
             {   
 
                 Dictionary<string, object> errors = new Dictionary<string, object>();
